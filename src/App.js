@@ -1,15 +1,18 @@
-import React from "react";
+// App.js
+import React, { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import News from "./components/navbar/news/News";
 
-const App=()=>{
+const App = () => {
+  const [category, setCategory] = useState("general");
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <>
-    <Navbar/>
-    <News/>
-
-   
+      <Navbar setCategory={setCategory} setSearchTerm={setSearchTerm} />
+      <News category={category} searchTerm={searchTerm} />
     </>
-  )
-}
-export default App
+  );
+};
+
+export default App;
